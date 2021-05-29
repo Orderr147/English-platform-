@@ -1,0 +1,996 @@
+
+
+<head>
+<title>English Exercises: The days of the week</title>
+<meta name="keywords" content="english exercises,english,exercises,The days of the week,days of the week">
+<meta name="description" content="days of the week exercise. Some exercises to learn and practice the days of the week.">
+<HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE"> 
+<style>
+
+.worksheetpreview {
+	border: 1px solid #666666;
+	border-radius: 3px;
+  	box-shadow: 3px 3px 3px #666666;
+}
+
+.enlace {
+text-decoration: none;
+color: #0066FF;
+}
+.enlace:hover {
+text-decoration: underline;
+cursor: pointer;
+}
+</style>
+
+<script language="javascript">
+
+
+var intAciertosCount = 0;
+var intErroresCount = 0;
+var intPreguntasCount = 0;
+var intIntentosCount = 0;
+var intAciertosWordsearchCount = 0;
+var intTrampasCount = 0;
+var intSeleccionadasCount = 0;
+var intRightCount = 0;
+
+function redirect() {
+window.location = page;
+}
+
+function gotoPage(time, url) {
+page = url;
+timer = setTimeout('redirect()', time);
+}
+
+
+function FP_getObjectByID(id,o) {
+ var c,el,els,f,m,n; if(!o)o=document; if(o.getElementById) el=o.getElementById(id);
+ else if(o.layers) c=o.layers; else if(o.all) el=o.all[id]; if(el) return el;
+ if(o.id==id || o.name==id) return o; if(o.childNodes) c=o.childNodes; if(c)
+ for(n=0; n<c.length; n++) { el=FP_getObjectByID(id,c[n]); if(el) return el; }
+ f=o.forms; if(f) for(n=0; n<f.length; n++) { els=f[n].elements;
+ for(m=0; m<els.length; m++){ el=FP_getObjectByID(id,els[n]); if(el) return el; } }
+ return null;
+}
+
+function FP_changeProp() {//v1.0
+ var args=arguments,d=document,i,j,id=args[0],o=FP_getObjectByID(id),s,ao,v,x;
+ d.$cpe=new Array(); if(o) for(i=2; i<args.length; i+=2) { v=args[i+1]; s="o"; 
+ ao=args[i].split("."); for(j=0; j<ao.length; j++) { s+="."+ao[j]; if(null==eval(s)) { 
+  s=null; break; } } x=new Object; x.o=o; x.n=new Array(); x.v=new Array();
+ x.n[x.n.length]=s; eval("x.v[x.v.length]="+s); d.$cpe[d.$cpe.length]=x;
+ if(s) eval(s+"=v"); }
+}
+
+
+ function FP_playSound(soundfile) {
+ document.getElementById("dummy").innerHTML=
+ "<embed name='youtube' src='https://www.englishexercises.org/flashplayer/audioplay.swf?file=" + soundfile.replace("wav","mp3") + "&auto=yes&sendstop=yes&repeat=1&buttondir=https://www.englishexercises.org/flashplayer/buttons/classic&bgcolor=0x000000&mode=playpause' quality=high wmode=transparent width='1' height='1' align='' TYPE='application/x-shockwave-flash' pluginspage='https://www.macromedia.com/go/getflashplayer'></embed>";
+ }
+ 
+ 
+function FP_swapImg() {//v1.0
+ var doc=document,args=arguments,elm,n; doc.$imgSwaps=new Array(); for(n=2; n<args.length;
+ n+=2) { elm=FP_getObjectByID(args[n]); if(elm) { doc.$imgSwaps[doc.$imgSwaps.length]=elm;
+ elm.$src=elm.src; elm.src=args[n+1]; } }
+}
+
+function aciertoWordsearch() {
+intAciertosWordsearchCount++
+}
+function falloWordsearch() {
+intErroresCount++;
+intPreguntasCount++
+}
+
+function comprobarFormulario() {
+intAciertosCount = intAciertosWordsearchCount;
+intIntentosCount++;
+
+for (w = 0; w < (document.images.length-1); w++) {
+if (document.images[w].id.indexOf("acierto") > 0) {
+intPreguntasCount++
+}
+}
+
+for (i = 0; i < (document.formulario.elements.length-2); i++) {
+
+
+if (document.formulario.elements[i].name == "casilla") {
+if (document.formulario.elements[i].value == "right") {
+intPreguntasCount = intPreguntasCount + 4;
+intRightCount = intRightCount + 1;
+}
+if (document.formulario.elements[i].checked == 1) {
+intSeleccionadasCount = intSeleccionadasCount + 1;
+if (document.formulario.elements[i].value == "right") {
+document.formulario.elements[i].style.backgroundColor='#66FF99';
+intAciertosCount = intAciertosCount + 4;
+}
+else if (document.formulario.elements[i].value != "right") {
+document.formulario.elements[i].style.backgroundColor='#FF6666';
+intErroresCount = intErroresCount + 4;
+}
+}
+}
+
+if (document.formulario.elements[i].name == "select1") {
+intPreguntasCount = intPreguntasCount+4;
+    if (document.formulario.elements[i].value == "right") {
+    intAciertosCount = intAciertosCount + 4;
+    document.formulario.elements[i].style.backgroundColor='#66FF99'
+    }
+    else if (document.formulario.elements[i].value != "right") {
+    intErroresCount = intErroresCount + 4;
+    document.formulario.elements[i].style.backgroundColor='#FF6666'
+    }
+}
+
+
+else {
+if (document.formulario.elements[i].name != "youtube" && document.formulario.elements[i].name != "select1" && document.formulario.elements[i].name != "casilla") {
+if( document.formulario.elements[i].name.indexOf("/",1) > 2 ) {
+intPreguntasCount = intPreguntasCount + 4;
+}
+else {intPreguntasCount = intPreguntasCount + 1 }
+textvalue = document.formulario.elements[i].value.toLowerCase();
+textvalue = textvalue.replace("   "," ");
+textvalue = textvalue.replace("  "," ");
+//hacemos trim
+textvalue = textvalue.replace(/^\s*|\s*$/g,"");
+//quitamos los puntos finales
+textvalue = textvalue.replace(/\s*[.]$/g,"");
+textvalue = "/" + textvalue + "/"
+if (document.formulario.elements[i].name.toLowerCase().indexOf(textvalue) == -1) {
+document.formulario.elements[i].style.backgroundColor='#FF6666'
+} 
+if (document.formulario.elements[i].name.toLowerCase().indexOf(textvalue) > -1) {
+document.formulario.elements[i].style.backgroundColor='#66FF99'
+if( document.formulario.elements[i].name.indexOf("/",1) > 2 ) {
+intAciertosCount = intAciertosCount + 4;
+}
+else {intAciertosCount = intAciertosCount + 1}
+} 
+
+}
+}
+}
+intTrampasCount = intSeleccionadasCount - intRightCount;
+if(intTrampasCount < 0) {intTrampasCount = 0 }
+intTrampasCount = intTrampasCount * 2;
+intAciertosCount = intAciertosCount - intTrampasCount;
+start();
+intAciertosCount = 0;
+intErroresCount = 0;
+intPreguntasCount = 0;
+document.formulario.B1.style.visibility = "hidden";
+document.formulario.B2.style.visibility = "visible";
+
+}
+
+
+
+
+//funcion para mostrar capa con notas xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+window.onerror = null;
+var topMargin = 100;
+var slideTime = 1200;
+var ns6 = (!document.all && document.getElementById);
+var ie4 = (document.all);
+var ns4 = (document.layers);
+function layerObject(id,left) {
+if (ns6) {
+this.obj = document.getElementById(id).style;
+this.obj.left = left;
+return this.obj;
+}
+else if(ie4) {
+this.obj = document.all[id].style;
+this.obj.left = left;
+return this.obj;
+}
+else if(ns4) {
+this.obj = document.layers[id];
+this.obj.left = left;
+return this.obj;
+   }
+}
+function layerSetup() {
+floatLyr = new layerObject('floatLayer', 50);
+window.setInterval("main()", 10)
+}
+function floatObject() {
+if (ns4 || ns6) {
+findHt = window.innerHeight;
+} else if(ie4) {
+findHt = document.body.clientHeight;
+   }
+} 
+function main() {
+if (ns4) {
+this.currentY = document.layers["floatLayer"].top;
+this.scrollTop = window.pageYOffset;
+mainTrigger();
+}
+else if(ns6) {
+this.currentY = parseInt(document.getElementById('floatLayer').style.top);
+this.scrollTop = scrollY;
+mainTrigger();
+} else if(ie4) {
+this.currentY = floatLayer.style.pixelTop;
+this.scrollTop = document.body.scrollTop;
+mainTrigger();
+   }
+}
+function mainTrigger() {
+var newTargetY = this.scrollTop + this.topMargin;
+if ( this.currentY != newTargetY ) {
+if ( newTargetY != this.targetY ) {
+this.targetY = newTargetY;
+floatStart();
+}
+animator();
+   }
+}
+function floatStart() {
+var now = new Date();
+this.A = this.targetY - this.currentY;
+this.B = Math.PI / ( 2 * this.slideTime );
+this.C = now.getTime();
+if (Math.abs(this.A) > this.findHt) {
+this.D = this.A > 0 ? this.targetY - this.findHt : this.targetY + this.findHt;
+this.A = this.A > 0 ? this.findHt : -this.findHt;
+}
+else {
+this.D = this.currentY;
+   }
+}
+function animator() {
+var now = new Date();
+var newY = this.A * Math.sin( this.B * ( now.getTime() - this.C ) ) + this.D;
+newY = Math.round(newY);
+if (( this.A > 0 && newY > this.currentY ) || ( this.A < 0 && newY < this.currentY )) {
+if ( ie4 )document.all.floatLayer.style.pixelTop = newY;
+if ( ns4 )document.layers["floatLayer"].top = newY;
+if ( ns6 )document.getElementById('floatLayer').style.top = newY + "px";
+   }
+}
+function start() {
+if(ns6||ns4) {
+pageWidth = innerWidth;
+pageHeight = innerHeight;
+layerSetup();
+floatObject();
+}
+else if(ie4) {
+pageWidth = document.body.clientWidth;
+pageHeight = document.body.clientHeight;
+layerSetup();
+floatObject();
+   }
+s = '<table border="0" cellpadding="0" cellspacing="0" width="580" id="table2" height="400" bgcolor="#FFFFFF"><tr><td width="567" height="389" align="center" valign="top"><img border="0" src="marks/' + Math.round((intAciertosCount/intPreguntasCount) * 10) + '.jpg" width="567" height="389"></td><td valign="top"><b><font face="Verdana"><a href="#a" target="_self" onclick="ocultarPuntuacion()">[x]</a></font></b></td></tr><tr><td align="center"><b><font face="Verdana" size="4"><a href="#a" target="_self" onclick="ocultarPuntuacion()">OK</a></font></b></td><td>&nbsp;</td></tr></table>';
+document.getElementById('floatLayer').innerHTML = s; 
+document.getElementById('floatLayer').style.display='block';
+return;
+}
+
+
+
+
+function ocultarPuntuacion() {
+document.getElementById('floatLayer').style.display='none';
+}
+//fin funcion para mostrar capa con notas xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+
+
+
+function verSoluciones() {
+
+for (i = 0; i < (document.images.length-1); i++) {
+if (document.images[i].id.indexOf('mgcwacierto') > 0) {
+if (document.images[i].src.indexOf('1.jpg') > 1) { 
+}
+else {FP_swapImg(1,0,/*id*/document.images[i].id,/*url*/document.images[i].src.replace('.jpg','1.jpg'))}
+}
+}
+
+
+for (i = 0; i < (document.formulario.elements.length-1); i++) {
+if (document.formulario.elements[i].name == "casilla") {
+if (document.formulario.elements[i].value == "right") {
+document.formulario.elements[i].checked = 1;
+}
+else if (document.formulario.elements[i].value != "right") {
+document.formulario.elements[i].checked = 0;
+}
+}
+else if (document.formulario.elements[i].name != "youtube" && document.formulario.elements[i].name != "select1" && document.formulario.elements[i].name != "casilla") {
+separarbarras = document.formulario.elements[i].name.split("/");
+document.formulario.elements[i].value = separarbarras[1];
+}
+else if (document.formulario.elements[i].name == "select1") {
+for (s = 0; s < (document.formulario.elements[i].options.length); s++) {
+if (document.formulario.elements[i].options[s].value == "right") {
+document.formulario.elements[i].options[s].selected = true;
+}
+}
+}
+
+}
+
+}
+
+
+function mostrarAnuncio() {
+if (navigator.appName == 'Netscape' || 'Microsoft Internet Explorer' || 'Opera'){
+
+var idioma = navigator.language;
+}
+else{
+var idioma = navigator.browserLanguage;
+}
+
+var iniciales = idioma.substring(0,2);
+if(iniciales=="es")
+{
+	document.getElementById('layeranuncio').style.display='block';
+}
+
+}
+
+function ocultarAnuncio() {
+document.getElementById('layeranuncio').style.display='none';
+}
+
+</script>
+
+
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3230892181288384",
+          enable_page_level_ads: true
+     });
+</script>
+
+
+
+</head>
+<body  OnLoad="self.focus()">
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+                
+
+                        <table  style="height:100%;width:100%; position: absolute; top: 0; bottom: 0; left: 0; right: 0;border:1px solid" bgcolor="FFCC00">
+                                <tr >
+                                        <td>
+                                                <form id="formulario" name="formulario">
+                                                <P align=center><FONT face="Comic Sans MS, Arial, Helvetica, sans-serif" color=#3366ff size=6><STRONG><IMG style="WIDTH: 122px; HEIGHT: 68px" height=200 src="https://www.englishexercises.org/makeagame/my_documents/my_pictures/gallery/c/calendar.jpg" width=200 border=0><FONT color=#ff0000>The days of the week</FONT><IMG style="WIDTH: 122px; HEIGHT: 68px" height=200 src="https://www.englishexercises.org/makeagame/my_documents/my_pictures/gallery/c/calendar.jpg" width=200 border=0></STRONG></P>
+<DIV></DIV>
+<DIV></DIV><STRONG> </STRONG> 
+<DIV></DIV><STRONG><FONT color=#ff0000 size=5>1. Write the days in the right order:</FONT></STRONG> 
+<DIV><FONT size=5><STRONG>Wednesday - Saturday - Monday - Friday - Tuesday - Sunday - Thursday</STRONG></FONT></DIV>
+<DIV><FONT size=5><STRONG>1.</STRONG><FONT style="BACKGROUND-COLOR: #ffffff" face="Verdana, Arial, Helvetica, sans-serif" color=#000000 size=4>Monday</FONT><STRONG> 2.<INPUT size=7 name=/tuesday/></STRONG></FONT><STRONG><FONT size=5> 3.<INPUT size=9 name=/wednesday/></FONT></STRONG><STRONG><FONT size=5> 4.<INPUT size=8 name=/thursday/></FONT></STRONG><STRONG><FONT size=5> 5.<INPUT size=6 name=/friday/></FONT></STRONG><STRONG><FONT size=5> 6.<INPUT size=8 name=/saturday/></FONT></STRONG><STRONG><FONT size=5> 7.<INPUT size=6 name=/sunday/></FONT></STRONG></DIV>
+<DIV><FONT size=5></FONT> </DIV>
+<DIV><FONT color=#ff0000 size=5><STRONG>2. Unscramble and write the number.</STRONG></FONT></DIV>
+<DIV><FONT color=#000000 size=3>Example:</FONT></DIV>
+<DIV><FONT size=5>U S Y T E A D:  </FONT><FONT size=4><FONT style="BACKGROUND-COLOR: #ffffff" face="Verdana, Arial, Helvetica, sans-serif" color=#000000>Tuesday</FONT>  <FONT style="BACKGROUND-COLOR: #ffffff" face="Verdana, Arial, Helvetica, sans-serif" color=#000000>  2</FONT></FONT></DIV>
+<DIV><FONT size=5>A F R Y I D: <INPUT size=6 name=/friday/> <INPUT size=1 name=/5/></FONT></DIV>
+<DIV><FONT size=5>U A N Y D S: <INPUT size=6 name=/sunday/> <INPUT size=1 name=/7/></FONT></DIV>
+<DIV><FONT size=5>A Y W D E D E N S: <INPUT size=9 name=/wednesday/> <INPUT size=1 name=/3/></FONT></DIV>
+<DIV><FONT size=5>N A D Y O M: <INPUT size=6 name=/monday/> <INPUT size=1 name=/1/></FONT></DIV>
+<DIV><FONT size=5>T S A R U Y A D: <INPUT size=8 name=/saturday/> <INPUT size=1 name=/6/></FONT></DIV>
+<DIV><FONT size=5>R H U D A T S Y: <INPUT size=8 name=/thursday/> <INPUT size=1 name=/4/></FONT></DIV>
+<DIV><FONT size=5>S E Y U T D A: <INPUT size=7 name=/tuesday/> <INPUT size=1 name=/2/></FONT></DIV>
+<DIV><FONT size=5></FONT> </DIV>
+<DIV><FONT color=#ff0000 size=5><STRONG>3. Choose the right option:</STRONG></FONT></DIV>
+<DIV>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+<TBODY>
+<TR>
+<TD  vAlign=top width="14.28%"><IMG style="WIDTH: 119px; HEIGHT: 125px" height=200 src="https://www.englishexercises.org/makeagame/my_documents/my_pictures/gallery/f/friday.jpg" width=200 border=0> 
+<TD  vAlign=top width="14.28%"><IMG style="WIDTH: 115px; HEIGHT: 123px" height=200 src="https://www.englishexercises.org/makeagame/my_documents/my_pictures/gallery/s/sunday.jpg" width=200 border=0> 
+<TD  vAlign=top width="14.28%"><IMG style="WIDTH: 118px; HEIGHT: 123px" height=200 src="https://www.englishexercises.org/makeagame/my_documents/my_pictures/gallery/w/wednesday.jpg" width=200 border=0> 
+<TD  vAlign=top width="14.28%"><IMG style="WIDTH: 115px; HEIGHT: 123px" height=200 src="https://www.englishexercises.org/makeagame/my_documents/my_pictures/gallery/m/monday.jpg" width=200 border=0> 
+<TD  vAlign=top width="14.28%"><IMG style="WIDTH: 119px; HEIGHT: 125px" height=200 src="https://www.englishexercises.org/makeagame/my_documents/my_pictures/gallery/s/saturday.jpg" width=200 border=0> 
+<TD  vAlign=top width="14.28%"><IMG style="WIDTH: 116px; HEIGHT: 125px" height=200 src="https://www.englishexercises.org/makeagame/my_documents/my_pictures/gallery/t/thursday.jpg" width=200 border=0> 
+<TD  vAlign=top width="14.28%"><IMG style="WIDTH: 111px; HEIGHT: 124px" height=200 src="https://www.englishexercises.org/makeagame/my_documents/my_pictures/gallery/t/tuesday.jpg" width=200 border=0></TD>
+<TR>
+<TD  vAlign=top width="14.28%"><SELECT size=1 name=select1><OPTION value="" selected></OPTION><OPTION value="">Monday</OPTION><OPTION value="">Tuesday</OPTION><OPTION value="">Wednesday</OPTION><OPTION value="">Thursday</OPTION><OPTION value=right>Friday</OPTION><OPTION value="">Saturday</OPTION><OPTION value="">Sunday</OPTION></SELECT> 
+<TD  vAlign=top width="14.28%"><SELECT size=1 name=select1><OPTION value="" selected></OPTION><OPTION value="">Monday</OPTION><OPTION value="">Tuesday</OPTION><OPTION value="">Wednesday</OPTION><OPTION value="">Thursday</OPTION><OPTION value="">Friday</OPTION><OPTION value="">Saturday</OPTION><OPTION value=right>Sunday</OPTION></SELECT> 
+<TD  vAlign=top width="14.28%"><SELECT size=1 name=select1><OPTION value="" selected></OPTION><OPTION value="">Monday</OPTION><OPTION value="">Tuesday</OPTION><OPTION value=right>Wednesday</OPTION><OPTION value="">Thursday</OPTION><OPTION value="">Friday</OPTION><OPTION value="">Saturday</OPTION><OPTION value="">Sunday</OPTION></SELECT> 
+<TD  vAlign=top width="14.28%"><SELECT size=1 name=select1><OPTION value="" selected></OPTION><OPTION value=right>Monday</OPTION><OPTION value="">Tuesday</OPTION><OPTION value="">Wednesday</OPTION><OPTION value="">Thursday</OPTION><OPTION value="">Friday</OPTION><OPTION value="">Saturday</OPTION><OPTION value="">Sunday</OPTION></SELECT> 
+<TD  vAlign=top width="14.28%"><SELECT size=1 name=select1><OPTION value="" selected></OPTION><OPTION value="">Monday</OPTION><OPTION value="">Tuesday</OPTION><OPTION value="">Wednesday</OPTION><OPTION value="">Thursday</OPTION><OPTION value="">Friday</OPTION><OPTION value=right>Saturday</OPTION><OPTION value="">Sunday</OPTION></SELECT> 
+<TD  vAlign=top width="14.28%"><SELECT size=1 name=select1><OPTION value="" selected></OPTION><OPTION value="">Monday</OPTION><OPTION value="">Tuesday</OPTION><OPTION value="">Wednesday</OPTION><OPTION value=right>Thursday</OPTION><OPTION value="">Friday</OPTION><OPTION value="">Saturday</OPTION><OPTION value="">Sunday</OPTION></SELECT> 
+<TD  vAlign=top width="14.28%"><SELECT size=1 name=select1><OPTION value="" selected></OPTION><OPTION value="">Monday</OPTION><OPTION value=right>Tuesday</OPTION><OPTION value="">Wednesday</OPTION><OPTION value="">Thursday</OPTION><OPTION value="">Friday</OPTION><OPTION value="">Saturday</OPTION><OPTION value="">Sunday</OPTION></SELECT></TD></TR></TBODY></TABLE></DIV>
+<DIV>      </DIV>
+<DIV><FONT color=#ff0000 size=5><STRONG>4. Which days are weekend days?</STRONG></FONT></DIV>
+<DIV><FONT size=5><INPUT type=checkbox value=wrong name=casilla>Tuesday   <INPUT type=checkbox value=wrong name=casilla>Friday   <INPUT type=checkbox value=wrong name=casilla>Monday   <INPUT type=checkbox value=right name=casilla>Sunday   <INPUT type=checkbox value=wrong name=casilla>Wednesday   <INPUT type=checkbox value=right name=casilla>Saturday   <INPUT type=checkbox value=wrong name=casilla>Thursday</FONT></DIV>
+<DIV><FONT size=5></FONT> </DIV>
+<DIV><FONT color=#ff0000 size=5><STRONG>5. Which days are school days?</STRONG></FONT></DIV>
+<DIV><FONT size=5><INPUT type=checkbox value=right name=casilla>Thursday   <INPUT type=checkbox value=wrong name=casilla>Saturday   <INPUT type=checkbox value=right name=casilla>Wednesday   <INPUT type=checkbox value=wrong name=casilla>Sunday   <INPUT type=checkbox value=right name=casilla>Monday   <INPUT type=checkbox value=right name=casilla>Friday   <INPUT type=checkbox value=right name=casilla>Tuesday</FONT></DIV>
+<DIV><FONT size=5></FONT> </DIV>
+<DIV><FONT color=#ff0000 size=5><STRONG>6. Listen and write:</STRONG></FONT></DIV>
+<DIV>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+<TBODY>
+<TR>
+<TD  vAlign=top width="14.28%"><IMG onclick="FP_playSound('https://www.englishexercises.org/sonidos/friday.wav')" src="https://www.englishexercises.org/makeagame/images/altavoz.gif" border=0> 
+<TD  vAlign=top width="14.28%"><IMG onclick="FP_playSound('https://www.englishexercises.org/sonidos/wednesday.wav')" src="https://www.englishexercises.org/makeagame/images/altavoz.gif" border=0> 
+<TD  vAlign=top width="14.28%"><IMG onclick="FP_playSound('https://www.englishexercises.org/sonidos/monday.wav')" src="https://www.englishexercises.org/makeagame/images/altavoz.gif" border=0> 
+<TD  vAlign=top width="14.28%"><IMG onclick="FP_playSound('https://www.englishexercises.org/sonidos/sunday.wav')" src="https://www.englishexercises.org/makeagame/images/altavoz.gif" border=0> 
+<TD  vAlign=top width="14.28%"><IMG onclick="FP_playSound('https://www.englishexercises.org/sonidos/tuesday.wav')" src="https://www.englishexercises.org/makeagame/images/altavoz.gif" border=0> 
+<TD  vAlign=top width="14.28%"><IMG onclick="FP_playSound('https://www.englishexercises.org/sonidos/thursday.wav')" src="https://www.englishexercises.org/makeagame/images/altavoz.gif" border=0> 
+<TD  vAlign=top width="14.28%"><IMG onclick="FP_playSound('https://www.englishexercises.org/sonidos/saturday.wav')" src="https://www.englishexercises.org/makeagame/images/altavoz.gif" border=0></TD>
+<TR>
+<TD  vAlign=top width="14.28%"> <INPUT size=6 name=/friday/> 
+<TD  vAlign=top width="14.28%"> <INPUT size=9 name=/wednesday/> 
+<TD  vAlign=top width="14.28%"> <INPUT size=6 name=/monday/> 
+<TD  vAlign=top width="14.28%"> <INPUT size=6 name=/sunday/> 
+<TD  vAlign=top width="14.28%"> <INPUT size=7 name=/tuesday/> 
+<TD  vAlign=top width="14.28%"> <INPUT size=8 name=/thursday/> 
+<TD  vAlign=top width="14.28%"><INPUT size=8 name=/saturday/></TD></TR></TBODY></TABLE></DIV>
+<DIV><FONT size=5></FONT> </DIV>
+<DIV><STRONG><FONT color=#ff0000 size=5>7. Complete the words:</FONT></STRONG></DIV>
+<DIV><STRONG><FONT size=5><FONT color=#0066ff>M</FONT><INPUT size=1 name=/O/><FONT color=#0066ff>N</FONT><INPUT size=1 name=/D/><FONT color=#0066ff>A</FONT><INPUT size=1 name=/Y/></FONT></STRONG></DIV>
+<DIV><STRONG><FONT size=5><FONT color=#0066ff>T</FONT><INPUT size=1 name=/U/><FONT color=#0066ff>E</FONT><INPUT size=1 name=/S/><FONT color=#0066ff>D</FONT><INPUT size=1 name=/A/><FONT color=#0066ff>Y</FONT></FONT></STRONG></DIV>
+<DIV><STRONG><FONT size=5><FONT color=#0066ff>W</FONT><INPUT size=1 name=/E/><FONT color=#0066ff>D</FONT><INPUT size=1 name=/N/><FONT color=#0066ff>E</FONT><INPUT size=1 name=/S/><FONT color=#0066ff>D</FONT><INPUT size=1 name=/A/><FONT color=#0066ff>Y</FONT></FONT></STRONG></DIV>
+<DIV><STRONG><FONT size=5><FONT color=#0066ff>T</FONT><INPUT size=1 name=/H/><FONT color=#0066ff>U</FONT><INPUT size=1 name=/R/><FONT color=#0066ff>S</FONT><INPUT size=1 name=/D/><FONT color=#0066ff>A</FONT><INPUT size=1 name=/Y/></FONT></STRONG></DIV>
+<DIV><STRONG><FONT size=5><FONT color=#0066ff>F</FONT><INPUT size=1 name=/R/><FONT color=#0066ff>I</FONT><INPUT size=1 name=/D/><FONT color=#0066ff>A</FONT><INPUT size=1 name=/Y/></FONT></STRONG></DIV>
+<DIV><STRONG><FONT size=5><FONT color=#0066ff>S</FONT><INPUT size=1 name=/A/><FONT color=#0066ff>T</FONT><INPUT size=1 name=/U/><FONT color=#0066ff>R</FONT><INPUT size=1 name=/D/><FONT color=#0066ff>A</FONT><INPUT size=1 name=/Y/></FONT></STRONG></DIV>
+<DIV><STRONG><FONT size=5><FONT color=#0066ff>S</FONT><INPUT size=1 name=/U/><FONT color=#0066ff>N</FONT><INPUT size=1 name=/D/><FONT color=#0066ff>A</FONT><INPUT size=1 name=/Y/></FONT></STRONG></DIV>
+<DIV><STRONG><FONT color=#ff0000 size=5></FONT></STRONG> </DIV>
+<DIV><FONT color=#ff0000 size=5><STRONG>8. Crossword:</STRONG></FONT></DIV>
+<DIV>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+<TBODY>
+<TR>
+<TD >
+<TABLE cellSpacing=0 cellPadding=0 width=320 border=0>
+<TBODY>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4>3</FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/w/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4>7</FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/e/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/s/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4>4</FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/d/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/u/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/t/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/n/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/n/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4>2</FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/h/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/e/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/d/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/t/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/u/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/s/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/a/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/u/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4>5</FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/f/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/r/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/i/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/d/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/a/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/y/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/e/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/s/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/a/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/s/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4>1</FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/m/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/o/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/n/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/d/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/a/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/y/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/d/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/a/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4>6</FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/s/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/a/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/t/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/u/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/r/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/d/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/a/></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/y/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><INPUT maxLength=1 size=1 name=/y/></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD>
+<TD vAlign=top align=middle width=22 height=15><B><FONT face=Arial size=4></FONT></B></TD></TR></TBODY></TABLE></TD>
+<TD  vAlign=top width="80%">
+<P><FONT face=Arial size=2>Write the days of the week on the crossword (1 - monday, 2 - tuesday, etc.)</FONT></P></TD></TR></TBODY></TABLE></DIV></FONT>  
+<DIV> </DIV>
+<DIV><FONT face="Comic Sans MS, Arial, Helvetica, sans-serif" color=#ff0000 size=5><STRONG>9. Word search:</STRONG></FONT></DIV>
+<DIV>
+<TABLE id=wordsearchtable cellSpacing=5 cellPadding=0 border=0>
+<TBODY>
+<TR>
+<TD width=420>
+<TABLE id=table1 height=420 cellSpacing=0 cellPadding=0 width=420 border=0>
+<TBODY>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw1 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw1',/*url*/'https://www.englishexercises.org/images/word_search/q2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/q.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw2 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw2',/*url*/'https://www.englishexercises.org/images/word_search/w2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/w.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw3 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw3',/*url*/'https://www.englishexercises.org/images/word_search/e2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/e.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw4 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw4',/*url*/'https://www.englishexercises.org/images/word_search/r2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/r.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw5 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw5',/*url*/'https://www.englishexercises.org/images/word_search/t2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/t.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw6 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw6',/*url*/'https://www.englishexercises.org/images/word_search/y2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/y.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw7 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw7',/*url*/'https://www.englishexercises.org/images/word_search/u2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/u.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw8 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw8',/*url*/'https://www.englishexercises.org/images/word_search/i2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/i.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw9 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw9',/*url*/'https://www.englishexercises.org/images/word_search/o2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/o.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw10 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw10',/*url*/'https://www.englishexercises.org/images/word_search/p2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/p.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw11 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw11',/*url*/'https://www.englishexercises.org/images/word_search/a2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/a.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw12 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw12',/*url*/'https://www.englishexercises.org/images/word_search/s2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/s.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw13 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw13',/*url*/'https://www.englishexercises.org/images/word_search/d2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/d.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw14 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw14',/*url*/'https://www.englishexercises.org/images/word_search/f2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/f.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw15 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw15',/*url*/'https://www.englishexercises.org/images/word_search/g2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/g.jpg" width=28 border=0></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw16 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw16',/*url*/'https://www.englishexercises.org/images/word_search/h2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/h.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw17 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw17',/*url*/'https://www.englishexercises.org/images/word_search/j2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/j.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto18 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto18',/*url*/'https://www.englishexercises.org/images/word_search/F1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/F.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto19 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto19',/*url*/'https://www.englishexercises.org/images/word_search/R1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/R.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto20 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto20',/*url*/'https://www.englishexercises.org/images/word_search/I1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/I.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto21 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto21',/*url*/'https://www.englishexercises.org/images/word_search/D1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/D.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto22 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto22',/*url*/'https://www.englishexercises.org/images/word_search/A1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/A.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto23 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto23',/*url*/'https://www.englishexercises.org/images/word_search/Y1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/Y.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw24 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw24',/*url*/'https://www.englishexercises.org/images/word_search/b2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/b.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw25 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw25',/*url*/'https://www.englishexercises.org/images/word_search/n2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/n.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw26 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw26',/*url*/'https://www.englishexercises.org/images/word_search/m2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/m.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw27 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw27',/*url*/'https://www.englishexercises.org/images/word_search/z2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/z.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto28 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto28',/*url*/'https://www.englishexercises.org/images/word_search/W1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/W.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw29 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw29',/*url*/'https://www.englishexercises.org/images/word_search/q2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/q.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw30 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw30',/*url*/'https://www.englishexercises.org/images/word_search/x2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/x.jpg" width=28 border=0></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto31 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto31',/*url*/'https://www.englishexercises.org/images/word_search/M1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/M.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw32 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw32',/*url*/'https://www.englishexercises.org/images/word_search/w2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/w.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw33 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw33',/*url*/'https://www.englishexercises.org/images/word_search/c2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/c.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw34 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw34',/*url*/'https://www.englishexercises.org/images/word_search/d2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/d.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw35 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw35',/*url*/'https://www.englishexercises.org/images/word_search/e2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/e.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw36 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw36',/*url*/'https://www.englishexercises.org/images/word_search/v2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/v.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw37 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw37',/*url*/'https://www.englishexercises.org/images/word_search/f2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/f.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw38 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw38',/*url*/'https://www.englishexercises.org/images/word_search/r2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/r.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw39 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw39',/*url*/'https://www.englishexercises.org/images/word_search/b2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/b.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto40 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto40',/*url*/'https://www.englishexercises.org/images/word_search/Y1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/Y.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw41 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw41',/*url*/'https://www.englishexercises.org/images/word_search/t2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/t.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw42 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw42',/*url*/'https://www.englishexercises.org/images/word_search/n2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/n.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto43 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto43',/*url*/'https://www.englishexercises.org/images/word_search/E1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/E.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw44 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw44',/*url*/'https://www.englishexercises.org/images/word_search/y2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/y.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw45 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw45',/*url*/'https://www.englishexercises.org/images/word_search/m2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/m.jpg" width=28 border=0></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto46 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto46',/*url*/'https://www.englishexercises.org/images/word_search/O1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/O.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw47 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw47',/*url*/'https://www.englishexercises.org/images/word_search/u2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/u.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw48 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw48',/*url*/'https://www.englishexercises.org/images/word_search/k2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/k.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw49 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw49',/*url*/'https://www.englishexercises.org/images/word_search/i2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/i.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw50 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw50',/*url*/'https://www.englishexercises.org/images/word_search/l2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/l.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw51 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw51',/*url*/'https://www.englishexercises.org/images/word_search/o2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/o.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw52 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw52',/*url*/'https://www.englishexercises.org/images/word_search/p2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/p.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw53 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw53',/*url*/'https://www.englishexercises.org/images/word_search/o2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/o.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw54 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw54',/*url*/'https://www.englishexercises.org/images/word_search/l2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/l.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto55 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto55',/*url*/'https://www.englishexercises.org/images/word_search/A1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/A.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw56 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw56',/*url*/'https://www.englishexercises.org/images/word_search/j2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/j.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw57 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw57',/*url*/'https://www.englishexercises.org/images/word_search/t2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/t.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto58 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto58',/*url*/'https://www.englishexercises.org/images/word_search/D1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/D.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw59 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw59',/*url*/'https://www.englishexercises.org/images/word_search/d2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/d.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw60 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw60',/*url*/'https://www.englishexercises.org/images/word_search/s2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/s.jpg" width=28 border=0></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto61 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto61',/*url*/'https://www.englishexercises.org/images/word_search/N1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/N.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw62 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw62',/*url*/'https://www.englishexercises.org/images/word_search/e2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/e.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto63 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto63',/*url*/'https://www.englishexercises.org/images/word_search/T1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/T.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw64 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw64',/*url*/'https://www.englishexercises.org/images/word_search/a2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/a.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw65 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw65',/*url*/'https://www.englishexercises.org/images/word_search/b2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/b.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw66 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw66',/*url*/'https://www.englishexercises.org/images/word_search/q2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/q.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw67 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw67',/*url*/'https://www.englishexercises.org/images/word_search/s2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/s.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw68 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw68',/*url*/'https://www.englishexercises.org/images/word_search/k2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/k.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw69 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw69',/*url*/'https://www.englishexercises.org/images/word_search/x2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/x.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto70 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto70',/*url*/'https://www.englishexercises.org/images/word_search/D1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/D.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw71 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw71',/*url*/'https://www.englishexercises.org/images/word_search/f2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/f.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw72 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw72',/*url*/'https://www.englishexercises.org/images/word_search/r2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/r.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto73 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto73',/*url*/'https://www.englishexercises.org/images/word_search/N1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/N.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw74 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw74',/*url*/'https://www.englishexercises.org/images/word_search/l2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/l.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw75 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw75',/*url*/'https://www.englishexercises.org/images/word_search/f2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/f.jpg" width=28 border=0></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto76 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto76',/*url*/'https://www.englishexercises.org/images/word_search/D1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/D.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw77 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw77',/*url*/'https://www.englishexercises.org/images/word_search/c2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/c.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw78 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw78',/*url*/'https://www.englishexercises.org/images/word_search/f2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/f.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto79 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto79',/*url*/'https://www.englishexercises.org/images/word_search/U1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/U.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw80 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw80',/*url*/'https://www.englishexercises.org/images/word_search/k2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/k.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw81 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw81',/*url*/'https://www.englishexercises.org/images/word_search/j2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/j.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw82 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw82',/*url*/'https://www.englishexercises.org/images/word_search/f2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/f.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw83 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw83',/*url*/'https://www.englishexercises.org/images/word_search/p2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/p.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw84 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw84',/*url*/'https://www.englishexercises.org/images/word_search/o2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/o.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto85 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto85',/*url*/'https://www.englishexercises.org/images/word_search/N1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/N.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw86 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw86',/*url*/'https://www.englishexercises.org/images/word_search/r2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/r.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw87 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw87',/*url*/'https://www.englishexercises.org/images/word_search/t2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/t.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto88 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto88',/*url*/'https://www.englishexercises.org/images/word_search/E1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/E.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw89 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw89',/*url*/'https://www.englishexercises.org/images/word_search/o2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/o.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw90 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw90',/*url*/'https://www.englishexercises.org/images/word_search/q2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/q.jpg" width=28 border=0></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto91 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto91',/*url*/'https://www.englishexercises.org/images/word_search/A1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/A.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw92 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw92',/*url*/'https://www.englishexercises.org/images/word_search/j2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/j.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw93 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw93',/*url*/'https://www.englishexercises.org/images/word_search/t2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/t.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw94 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw94',/*url*/'https://www.englishexercises.org/images/word_search/g2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/g.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto95 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto95',/*url*/'https://www.englishexercises.org/images/word_search/E1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/E.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw96 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw96',/*url*/'https://www.englishexercises.org/images/word_search/l2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/l.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw97 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw97',/*url*/'https://www.englishexercises.org/images/word_search/g2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/g.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw98 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw98',/*url*/'https://www.englishexercises.org/images/word_search/l2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/l.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw99 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw99',/*url*/'https://www.englishexercises.org/images/word_search/k2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/k.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto100 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto100',/*url*/'https://www.englishexercises.org/images/word_search/U1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/U.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw101 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw101',/*url*/'https://www.englishexercises.org/images/word_search/s2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/s.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw102 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw102',/*url*/'https://www.englishexercises.org/images/word_search/n2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/n.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto103 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto103',/*url*/'https://www.englishexercises.org/images/word_search/S1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/S.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw104 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw104',/*url*/'https://www.englishexercises.org/images/word_search/s2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/s.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw105 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw105',/*url*/'https://www.englishexercises.org/images/word_search/k2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/k.jpg" width=28 border=0></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto106 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto106',/*url*/'https://www.englishexercises.org/images/word_search/Y1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/Y.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw107 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw107',/*url*/'https://www.englishexercises.org/images/word_search/f2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/f.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw108 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw108',/*url*/'https://www.englishexercises.org/images/word_search/p2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/p.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw109 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw109',/*url*/'https://www.englishexercises.org/images/word_search/i2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/i.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw110 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw110',/*url*/'https://www.englishexercises.org/images/word_search/o2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/o.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto111 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto111',/*url*/'https://www.englishexercises.org/images/word_search/S1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/S.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw112 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw112',/*url*/'https://www.englishexercises.org/images/word_search/r2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/r.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw113 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw113',/*url*/'https://www.englishexercises.org/images/word_search/u2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/u.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw114 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw114',/*url*/'https://www.englishexercises.org/images/word_search/t2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/t.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto115 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto115',/*url*/'https://www.englishexercises.org/images/word_search/S1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/S.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw116 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw116',/*url*/'https://www.englishexercises.org/images/word_search/n2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/n.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw117 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw117',/*url*/'https://www.englishexercises.org/images/word_search/g2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/g.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto118 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto118',/*url*/'https://www.englishexercises.org/images/word_search/D1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/D.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw119 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw119',/*url*/'https://www.englishexercises.org/images/word_search/l2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/l.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw120 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw120',/*url*/'https://www.englishexercises.org/images/word_search/k2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/k.jpg" width=28 border=0></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw121 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw121',/*url*/'https://www.englishexercises.org/images/word_search/j2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/j.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw122 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw122',/*url*/'https://www.englishexercises.org/images/word_search/s2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/s.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw123 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw123',/*url*/'https://www.englishexercises.org/images/word_search/d2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/d.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw124 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw124',/*url*/'https://www.englishexercises.org/images/word_search/h2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/h.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw125 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw125',/*url*/'https://www.englishexercises.org/images/word_search/l2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/l.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw126 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw126',/*url*/'https://www.englishexercises.org/images/word_search/r2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/r.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto127 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto127',/*url*/'https://www.englishexercises.org/images/word_search/D1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/D.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw128 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw128',/*url*/'https://www.englishexercises.org/images/word_search/i2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/i.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw129 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw129',/*url*/'https://www.englishexercises.org/images/word_search/t2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/t.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw130 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw130',/*url*/'https://www.englishexercises.org/images/word_search/r2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/r.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw131 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw131',/*url*/'https://www.englishexercises.org/images/word_search/o2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/o.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw132 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw132',/*url*/'https://www.englishexercises.org/images/word_search/q2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/q.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto133 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto133',/*url*/'https://www.englishexercises.org/images/word_search/A1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/A.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw134 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw134',/*url*/'https://www.englishexercises.org/images/word_search/w2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/w.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw135 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw135',/*url*/'https://www.englishexercises.org/images/word_search/y2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/y.jpg" width=28 border=0></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw136 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw136',/*url*/'https://www.englishexercises.org/images/word_search/e2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/e.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw137 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw137',/*url*/'https://www.englishexercises.org/images/word_search/r2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/r.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw138 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw138',/*url*/'https://www.englishexercises.org/images/word_search/u2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/u.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw139 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw139',/*url*/'https://www.englishexercises.org/images/word_search/b2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/b.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw140 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw140',/*url*/'https://www.englishexercises.org/images/word_search/n2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/n.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw141 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw141',/*url*/'https://www.englishexercises.org/images/word_search/d2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/d.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw142 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw142',/*url*/'https://www.englishexercises.org/images/word_search/s2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/s.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto143 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto143',/*url*/'https://www.englishexercises.org/images/word_search/A1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/A.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw144 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw144',/*url*/'https://www.englishexercises.org/images/word_search/i2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/i.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw145 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw145',/*url*/'https://www.englishexercises.org/images/word_search/o2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/o.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw146 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw146',/*url*/'https://www.englishexercises.org/images/word_search/d2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/d.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw147 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw147',/*url*/'https://www.englishexercises.org/images/word_search/m2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/m.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto148 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto148',/*url*/'https://www.englishexercises.org/images/word_search/Y1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/Y.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw149 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw149',/*url*/'https://www.englishexercises.org/images/word_search/b2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/b.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw150 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw150',/*url*/'https://www.englishexercises.org/images/word_search/x2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/x.jpg" width=28 border=0></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw151 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw151',/*url*/'https://www.englishexercises.org/images/word_search/z2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/z.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto152 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto152',/*url*/'https://www.englishexercises.org/images/word_search/S1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/S.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto153 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto153',/*url*/'https://www.englishexercises.org/images/word_search/A1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/A.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto154 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto154',/*url*/'https://www.englishexercises.org/images/word_search/T1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/T.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto155 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto155',/*url*/'https://www.englishexercises.org/images/word_search/U1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/U.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto156 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto156',/*url*/'https://www.englishexercises.org/images/word_search/R1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/R.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto157 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto157',/*url*/'https://www.englishexercises.org/images/word_search/D1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/D.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto158 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto158',/*url*/'https://www.englishexercises.org/images/word_search/A1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/A.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto159 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto159',/*url*/'https://www.englishexercises.org/images/word_search/Y1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/Y.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw160 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw160',/*url*/'https://www.englishexercises.org/images/word_search/w2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/w.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw161 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw161',/*url*/'https://www.englishexercises.org/images/word_search/e2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/e.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw162 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw162',/*url*/'https://www.englishexercises.org/images/word_search/d2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/d.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw163 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw163',/*url*/'https://www.englishexercises.org/images/word_search/c2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/c.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw164 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw164',/*url*/'https://www.englishexercises.org/images/word_search/e2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/e.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw165 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw165',/*url*/'https://www.englishexercises.org/images/word_search/f2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/f.jpg" width=28 border=0></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw166 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw166',/*url*/'https://www.englishexercises.org/images/word_search/f2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/f.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw167 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw167',/*url*/'https://www.englishexercises.org/images/word_search/r2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/r.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw168 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw168',/*url*/'https://www.englishexercises.org/images/word_search/v2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/v.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw169 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw169',/*url*/'https://www.englishexercises.org/images/word_search/e2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/e.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw170 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw170',/*url*/'https://www.englishexercises.org/images/word_search/f2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/f.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw171 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw171',/*url*/'https://www.englishexercises.org/images/word_search/r2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/r.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw172 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw172',/*url*/'https://www.englishexercises.org/images/word_search/v2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/v.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw173 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw173',/*url*/'https://www.englishexercises.org/images/word_search/b2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/b.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw174 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw174',/*url*/'https://www.englishexercises.org/images/word_search/r2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/r.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw175 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw175',/*url*/'https://www.englishexercises.org/images/word_search/b2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/b.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw176 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw176',/*url*/'https://www.englishexercises.org/images/word_search/t2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/t.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw177 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw177',/*url*/'https://www.englishexercises.org/images/word_search/n2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/n.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw178 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw178',/*url*/'https://www.englishexercises.org/images/word_search/h2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/h.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw179 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw179',/*url*/'https://www.englishexercises.org/images/word_search/t2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/t.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw180 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw180',/*url*/'https://www.englishexercises.org/images/word_search/m2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/m.jpg" width=28 border=0></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw181 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw181',/*url*/'https://www.englishexercises.org/images/word_search/y2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/y.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw182 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw182',/*url*/'https://www.englishexercises.org/images/word_search/j2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/j.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw183 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw183',/*url*/'https://www.englishexercises.org/images/word_search/s2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/s.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw184 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw184',/*url*/'https://www.englishexercises.org/images/word_search/k2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/k.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw185 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw185',/*url*/'https://www.englishexercises.org/images/word_search/i2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/i.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw186 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw186',/*url*/'https://www.englishexercises.org/images/word_search/o2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/o.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw187 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw187',/*url*/'https://www.englishexercises.org/images/word_search/l2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/l.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw188 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw188',/*url*/'https://www.englishexercises.org/images/word_search/o2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/o.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw189 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw189',/*url*/'https://www.englishexercises.org/images/word_search/p2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/p.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw190 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw190',/*url*/'https://www.englishexercises.org/images/word_search/m2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/m.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw191 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw191',/*url*/'https://www.englishexercises.org/images/word_search/n2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/n.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw192 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw192',/*url*/'https://www.englishexercises.org/images/word_search/b2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/b.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw193 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw193',/*url*/'https://www.englishexercises.org/images/word_search/v2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/v.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw194 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw194',/*url*/'https://www.englishexercises.org/images/word_search/c2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/c.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw195 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw195',/*url*/'https://www.englishexercises.org/images/word_search/x2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/x.jpg" width=28 border=0></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw196 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw196',/*url*/'https://www.englishexercises.org/images/word_search/z2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/z.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw197 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw197',/*url*/'https://www.englishexercises.org/images/word_search/a2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/a.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw198 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw198',/*url*/'https://www.englishexercises.org/images/word_search/w2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/w.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw199 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw199',/*url*/'https://www.englishexercises.org/images/word_search/e2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/e.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw200 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw200',/*url*/'https://www.englishexercises.org/images/word_search/r2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/r.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto201 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto201',/*url*/'https://www.englishexercises.org/images/word_search/T1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/T.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto202 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto202',/*url*/'https://www.englishexercises.org/images/word_search/H1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/H.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto203 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto203',/*url*/'https://www.englishexercises.org/images/word_search/U1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/U.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto204 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto204',/*url*/'https://www.englishexercises.org/images/word_search/R1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/R.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto205 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto205',/*url*/'https://www.englishexercises.org/images/word_search/S1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/S.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto206 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto206',/*url*/'https://www.englishexercises.org/images/word_search/D1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/D.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto207 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto207',/*url*/'https://www.englishexercises.org/images/word_search/A1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/A.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcwacierto208 onclick="aciertoWordsearch(),FP_swapImg(1,0,/*id*/'imgcwacierto208',/*url*/'https://www.englishexercises.org/images/word_search/Y1.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/Y.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw209 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw209',/*url*/'https://www.englishexercises.org/images/word_search/j2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/j.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw210 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw210',/*url*/'https://www.englishexercises.org/images/word_search/a2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/a.jpg" width=28 border=0></TD></TR>
+<TR>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw211 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw211',/*url*/'https://www.englishexercises.org/images/word_search/s2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/s.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw212 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw212',/*url*/'https://www.englishexercises.org/images/word_search/q2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/q.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw213 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw213',/*url*/'https://www.englishexercises.org/images/word_search/w2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/w.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw214 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw214',/*url*/'https://www.englishexercises.org/images/word_search/e2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/e.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw215 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw215',/*url*/'https://www.englishexercises.org/images/word_search/r2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/r.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw216 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw216',/*url*/'https://www.englishexercises.org/images/word_search/w2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/w.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw217 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw217',/*url*/'https://www.englishexercises.org/images/word_search/e2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/e.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw218 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw218',/*url*/'https://www.englishexercises.org/images/word_search/s2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/s.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw219 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw219',/*url*/'https://www.englishexercises.org/images/word_search/k2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/k.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw220 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw220',/*url*/'https://www.englishexercises.org/images/word_search/d2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/d.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw221 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw221',/*url*/'https://www.englishexercises.org/images/word_search/f2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/f.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw222 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw222',/*url*/'https://www.englishexercises.org/images/word_search/j2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/j.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw223 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw223',/*url*/'https://www.englishexercises.org/images/word_search/h2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/h.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw224 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw224',/*url*/'https://www.englishexercises.org/images/word_search/g2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/g.jpg" width=28 border=0></TD>
+<TD vAlign=top align=middle width=28 height=28><IMG id=imgcw225 onclick="falloWordsearch(),FP_swapImg(1,0,/*id*/'imgcw225',/*url*/'https://www.englishexercises.org/images/word_search/u2.jpg')" height=28 src="https://www.englishexercises.org/images/word_search/u.jpg" width=28 border=0></TD></TR></TBODY></TABLE></TD>
+<TD vAlign=top width="80%">
+<P> </P></TD></TR></TBODY></TABLE></DIV>
+                                                <p>&nbsp;</p>
+
+                                                <p align="center"><input type="button" value="DONE!" name="B1" onclick="comprobarFormulario()" style="width:80px;height:40px;font-size:20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <br>
+												<input  type="button" value="Show answers" name="B2" onclick="verSoluciones()" style="width:160;height:43;font-size:20"></p>
+                                                </form>
+                                        </td>
+                                </tr>
+                        </table>
+
+                        
+
+
+
+
+<br>
+       
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2079983-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
